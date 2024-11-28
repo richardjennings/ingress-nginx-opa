@@ -1,12 +1,16 @@
 # OPA Nginx
 
-# What
+## What
 OPA integration with [Nginx Auth Requests](https://nginx.org/en/docs/http/ngx_http_auth_request_module.html).
+
+OPA Nginx provides a mechanism to apply OPA Rego Policies to HTTP(s) requests via 
+the Nginx Ingress Controller Auth Requests capability.
 
 ## How
 
-Nginx Auth Requests are transformed into a JSON structure. This structure is then sent to the defined OPA REST API 
-address e.g. POST `http://opa-nginx.opa-nginx.svc.cluster.local:8282` to be evaluated.
+Nginx Auth Requests are transformed into a JSON structure. This structure is 
+then provided to the defined OPA REST API address e.g. POST `http://opa-nginx.opa-nginx.svc.cluster.local:8282` 
+to be evaluated.
 
 The inputs provided to OPA by Nginx OPA Proxy are of the form:
 
@@ -72,4 +76,4 @@ ingress-nginx:
 
 ## Status
 
-Beta
+Running in production for over a year without issue.
